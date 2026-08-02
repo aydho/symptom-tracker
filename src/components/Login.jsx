@@ -3,7 +3,7 @@ import { TextField, Button, Box, Typography } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 import { clearCache } from '../utils/cacheUtils';
 
 const textFieldCommonProps = {

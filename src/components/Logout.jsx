@@ -2,7 +2,7 @@ import { useCallback, memo } from 'react';
 import { Button } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { getAuth, signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { styled } from '@mui/material/styles';
 
 const ColouredLogoutIcon = styled(LogoutIcon)(({ theme }) => ({

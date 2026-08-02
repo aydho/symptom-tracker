@@ -4,7 +4,7 @@ import {
   FormControlLabel, FormControl, InputLabel, IconButton,
   CircularProgress, Slider
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { DatePicker } from '@mui/x-date-pickers'; // Import DatePicker
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';

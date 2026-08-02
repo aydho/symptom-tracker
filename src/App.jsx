@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback, memo, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router';
 import { auth } from './firebase';
 import Signup from './components/Signup.jsx';
 import Login from './components/Login.jsx';

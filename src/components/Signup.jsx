@@ -3,7 +3,7 @@ import { TextField, Button, Box, Typography } from '@mui/material';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import LoginIcon from '@mui/icons-material/Login';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 
 const textFieldCommonProps = {
   margin: "normal",
