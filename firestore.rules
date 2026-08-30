@@ -1,0 +1,33 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // A signed-in user owns a document when its userId matches their uid.
+    function isOwner() {
+      return request.auth != null
+        && request.auth.uid == resource.data.userId;
+    }
+
+    // On create/update, the incoming document must be stamped with the
+    // caller's own uid — this prevents assigning a record to someone else.
+    function isOwnedByCaller() {
+      return request.auth != null
+        && request.auth.uid == request.resource.data.userId;
+    }
+
+    match /symptoms/{symptomId} {
+      allow read:   if isOwner();
+      allow create: if isOwnedByCaller();
+      allow update: if isOwner() && isOwnedByCaller();
+      allow delete: if isOwner();
+    }
+
+    match /dynamicFields/{dynamicFieldId} {
+      allow read:   if isOwner();
+      allow create: if isOwnedByCaller();
+      allow update: if isOwner() && isOwnedByCaller();
+      allow delete: if isOwner();
+    }
+  }
+}
